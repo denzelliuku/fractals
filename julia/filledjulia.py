@@ -34,7 +34,7 @@ class FilledJulia:
         :param z_max: Maximum value of the complex number (in both axes)
         :param c: Given value for c
         :param iters: Number of iterations used to see whether the
-        iteration with the given c blows up
+            iteration with the given c blows up
         :param size: Size of the (square) image
         """
         self.z_max = z_max
@@ -78,7 +78,7 @@ class FilledJulia:
         to diverge
         :param z_arr: Matrix of complex numbers
         :return: Matrix of the same shape as z_arr, where the escape
-        velocity of each item in the matrix is calculated
+            velocity of each item in the matrix is calculated
         """
         vel_arr = np.zeros((self.size, self.size), dtype=np.uint16)
         for j in range(self.size):
