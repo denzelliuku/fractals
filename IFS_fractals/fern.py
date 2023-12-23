@@ -19,9 +19,9 @@ def get_rule() -> dict:
     """
     rand = random()
     for rule in rules:
-        if rand < rule['weight']:
+        if rand < rule["weight"]:
             return rule
-        rand -= rule['weight']
+        rand -= rule["weight"]
 
 
 def create_points(n: int = 100) -> np.ndarray:
@@ -35,8 +35,8 @@ def create_points(n: int = 100) -> np.ndarray:
     points[0, :2] = x, y
     for i in range(1, n):
         rule = get_rule()
-        trans_mat = np.array([[rule['a'], rule['b'], rule['tx']],
-                              [rule['c'], rule['d'], rule['ty']]])
+        trans_mat = np.array([[rule["a"], rule["b"], rule["tx"]],
+                              [rule["c"], rule["d"], rule["ty"]]])
         points[i, :2] = np.matmul(trans_mat, points[i - 1, :])
     return points
 
@@ -44,10 +44,10 @@ def create_points(n: int = 100) -> np.ndarray:
 def main():
     n = 100000
     data = create_points(n)
-    plt.scatter(data[:, 0], data[:, 1], color='blue', s=0.2)
+    plt.scatter(data[:, 0], data[:, 1], color="blue", s=0.2)
     plt.grid()
     plt.show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

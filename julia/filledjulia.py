@@ -22,7 +22,7 @@ def timer(func: Callable):
     def wrapper(*args, **kwargs):
         s = default_timer()
         rv = func(*args, **kwargs)
-        print(f'Time: {func.__name__}: {default_timer() - s:.4f} s')
+        print(f"Time: {func.__name__}: {default_timer() - s:.4f} s")
         return rv
     return wrapper
 
@@ -87,7 +87,7 @@ class FilledJulia:
 
         return vel_arr
 
-    def generate_img(self, cmap: str = 'jet') -> None:
+    def generate_img(self, cmap: str = "jet") -> None:
         """
         Generates the image
         :param cmap: Name of a colormap supported by matplotlib
@@ -108,10 +108,10 @@ def main():
     c = -0.297491 + 0.641051j
     iters = 100
     size = 1080
-    cmap = 'inferno'
+    cmap = "inferno"
     julia = FilledJulia(z_max, c, iters, size)
     julia.generate_img(cmap)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -19,7 +19,7 @@ def timer(func: Callable):
     def wrapper(*args, **kwargs):
         s = default_timer()
         rv = func(*args, **kwargs)
-        print(f'Time: {func.__name__}: {default_timer() - s:.4f} s')
+        print(f"Time: {func.__name__}: {default_timer() - s:.4f} s")
         return rv
     return wrapper
 
@@ -122,11 +122,11 @@ class Mandelbruh:
 def main():
     w, h = 2560, 1440
     iter_limit = 250
-    cmap = 'jet'
+    cmap = "jet"
     black = (0, 0, 0)
     m = Mandelbruh(w, h, iter_limit)
     m.generate_img(cmap, set_color=black)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
